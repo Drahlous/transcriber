@@ -1,5 +1,13 @@
+if ($args.Count -ne 1) {
+    write-output "Error: Script takes exactly 1 argument!"
+    exit
+}
+
+$data_directory=$args[0]
+write-output "Parsing files in directory '$data_directory' ..."
+
 # Create logfile directory
-New-Item -Type Directory -Force "logs"
+$null = New-Item -Type Directory -Force "logs"
 
 # Iterate over all data files
 $files = Get-ChildItem -Path ".\data\test_audio"
