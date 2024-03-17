@@ -10,7 +10,7 @@ write-output "Parsing files in directory '$data_directory' ..."
 $null = New-Item -Type Directory -Force "logs"
 
 # Iterate over all data files
-$files = Get-ChildItem -Path ".\data\test_audio"
+$files = Get-ChildItem -Path $data_directory
 foreach ($f in $files){
     $filename = $f.FullName
     write-output $filename
